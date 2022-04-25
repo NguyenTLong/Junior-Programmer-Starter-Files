@@ -9,6 +9,7 @@ public class ColorPicker : MonoBehaviour
     public Button ColorButtonPrefab;
     
     public Color SelectedColor { get; private set; }
+
     public System.Action<Color> onColorChanged;
 
     List<Button> m_ColorButtons = new List<Button>();
@@ -32,6 +33,8 @@ public class ColorPicker : MonoBehaviour
                 newButton.interactable = false;
                 
                 onColorChanged.Invoke(SelectedColor);
+
+                
             });
             
             m_ColorButtons.Add(newButton);
